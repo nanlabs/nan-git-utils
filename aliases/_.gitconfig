@@ -1,0 +1,10 @@
+[alias]
+	# Workflow
+        add-upstream = "!f() { git remote add upstream git@github.com:$1.git; }; f"
+        feature = "!f() { git fetch upstream && git checkout -b feature/$1 upstream/master; }; f"
+        features = "branch --list feature/*"
+        up = "!git fetch upstream && git rebase upstream/master"
+
+	# Release Management
+        tag-del = "!f() { git tag -d $1 && git push origin :refs/tags/$1; }; f"
+        tag-add = "!f() { git tag -a $1 -m \"$2\" && git push origin $1; }; f"
