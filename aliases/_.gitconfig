@@ -1,4 +1,7 @@
 [alias]
+	# Utils
+	unadd = "reset HEAD"
+
 	# Workflow
         add-upstream = "!f() { git remote add upstream git@github.com:$1.git; }; f"
         feature = "!f() { git fetch upstream && git checkout -b feature/$1 upstream/master; }; f"
